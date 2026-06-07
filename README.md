@@ -1,16 +1,271 @@
-# React + Vite
+# Employee Leave Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Employee Leave Management System built using Spring Boot, React, JWT Authentication, and MySQL.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Authentication & Authorization
+- JWT Based Authentication
+- Spring Security Integration
+- Role-Based Access Control
+- Secure Login System
 
-## React Compiler
+### Roles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+#### Admin
+- View Dashboard Statistics
+- Create Employees
+- Create Managers
+- View Employee List
+- View Manager List
+- Delete Employees
+- Delete Managers
 
-## Expanding the ESLint configuration
+#### Manager
+- View Pending Leave Requests
+- Approve Leave Requests
+- Reject Leave Requests
+- Track Leave Reviews
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Employee
+- Apply for Leave
+- View Leave History
+- Track Leave Status
+- View Leave Statistics
+
+---
+
+## Tech Stack
+
+### Backend
+- Java 17
+- Spring Boot 3
+- Spring Security
+- JWT Authentication
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Lombok
+- Maven
+- Swagger
+
+### Frontend
+- React JS
+- Vite
+- Axios
+- React Router DOM
+- CSS3
+
+### Database
+- MySQL
+
+---
+
+## Project Architecture
+
+Employee Leave Management System
+
+├── Backend (Spring Boot)
+
+│ ├── Authentication
+
+│ ├── Authorization
+
+│ ├── Employee Management
+
+│ ├── Leave Management
+
+│ └── Dashboard APIs
+
+│
+
+└── Frontend (React)
+
+├── Login Page
+
+├── Admin Dashboard
+
+├── Manager Dashboard
+
+├── Employee Dashboard
+
+└── Role-Based Navigation
+
+---
+
+## API Modules
+
+### Authentication APIs
+- Register Employee
+- Login User
+- Generate JWT Token
+
+### Admin APIs
+- Dashboard Statistics
+- Create Employee
+- Get Employees
+- Delete Employee
+
+### Manager APIs
+- View Pending Leaves
+- Approve Leave
+- Reject Leave
+
+### Employee APIs
+- Apply Leave
+- View Leave History
+
+---
+
+## Database Tables
+
+### Employee
+| Field | Type |
+|---------|---------|
+| id | Long |
+| name | String |
+| email | String |
+| password | String |
+| role | Enum |
+
+### Leave Request
+| Field | Type |
+|---------|---------|
+| id | Long |
+| startDate | LocalDate |
+| endDate | LocalDate |
+| reason | String |
+| status | Enum |
+| employeeId | Long |
+
+---
+
+## Security
+
+- Password Encryption using BCrypt
+- JWT Token Authentication
+- Protected REST APIs
+- Role-Based Authorization
+
+---
+
+## Screenshots
+
+### Login Page
+Modern glassmorphism login page with secure authentication.
+
+### Admin Dashboard
+- Dashboard Analytics
+- Employee Management
+- Manager Management
+
+### Manager Dashboard
+- Pending Requests
+- Approve/Reject Actions
+
+### Employee Dashboard
+- Apply Leave
+- Leave Statistics
+- Leave History
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/employee-leave-management-system.git
+```
+
+### Backend Setup
+
+```bash
+cd backend
+```
+
+Configure MySQL in:
+
+```properties
+application.properties
+```
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/leave_management
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+```
+
+Run:
+
+```bash
+mvn spring-boot:run
+```
+
+Backend runs on:
+
+```text
+http://localhost:8080
+```
+
+---
+
+### Frontend Setup
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run:
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Future Enhancements
+
+- Email Notifications
+- Leave Balance Tracking
+- Employee Profile Management
+- Pagination
+- Search & Filter
+- Charts & Analytics
+- Cloud Deployment
+- Docker Support
+
+---
+
+## Author
+
+**Sai Rakesh**
+
+Java Full Stack Developer
+
+Skills:
+- Java
+- Spring Boot
+- Spring Security
+- React JS
+- MySQL
+- REST APIs
+- JWT Authentication
+
+---
+
+## License
+
+This project is developed for learning, portfolio, and interview demonstration purposes.
